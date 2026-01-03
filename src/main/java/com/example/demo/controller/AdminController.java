@@ -10,7 +10,7 @@ import com.example.demo.models.Employee;
 
 @RestController
 @RequestMapping("/api/admin/employees")
-@CrossOrigin@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class AdminController {
 
     @Autowired
