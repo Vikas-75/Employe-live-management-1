@@ -15,7 +15,7 @@ import com.example.demo.service.LeaveService;
 
 @RestController
 @RequestMapping("/api/admin/leave")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 public class AdminLeaveController {
 
     @Autowired
