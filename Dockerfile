@@ -1,17 +1,16 @@
-# Use Java 17
-FROM eclipse-temurin:17-jdk-alpine
-
-# Set working directory
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy Maven wrapper and pom
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
 COPY . .
+RUN mvn clean package -DskipTests
 
-# Build the application
-RUN ./mvnw clean package -DskipTests
+FROM eclipse-temurin:17
+WORKDIR /app
 
-# Expose port
+COPY --from=build /app/target/*.jar app.jar
+
 EXPOSE 8080
-
-# Run the app
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["java", "-jar", "app.jar"]
