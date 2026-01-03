@@ -15,11 +15,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contact")
-@CrossOrigin(origins = "http://localhost:5173") // frontend origin
+@CrossOrigin(origins = "*")
 public class ContactController {
 
-    @Autowired
-    private ContactRepository contactRepository;
+    private final ContactRepository contactRepository;
+
+    public ContactController(ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
+    }
+
 
     // POST new contact
     @PostMapping
