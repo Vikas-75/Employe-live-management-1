@@ -14,7 +14,7 @@ import com.example.demo.service.LeaveService;
 
 
 @RestController
-@RequestMapping("/api/admin/leave")
+@RequestMapping("/admin/leave")
 @CrossOrigin(origins = "*")
 public class AdminLeaveController {
 
