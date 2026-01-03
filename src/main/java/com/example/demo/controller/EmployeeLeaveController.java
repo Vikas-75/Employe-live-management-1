@@ -18,7 +18,7 @@ import com.example.demo.repository.EmployeeRepository;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/api/employee/leave")
+@RequestMapping("/employee/leave")
 public class EmployeeLeaveController {
 
     @Autowired
