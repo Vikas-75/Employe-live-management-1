@@ -9,7 +9,7 @@ import com.example.demo.service.EmployeeService;
 import com.example.demo.models.Employee;
 
 @RestController
-@RequestMapping("/api/admin/employees")
+@RequestMapping("/admin/employees")
 @CrossOrigin(origins = "*")
 public class AdminController {
 
