@@ -17,7 +17,7 @@ import com.example.demo.models.LeaveRequest;
 import com.example.demo.repository.EmployeeRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/employee/leave")
 public class EmployeeLeaveController {
 
