@@ -10,7 +10,7 @@ import com.example.demo.models.Employee;
 
 @RestController
 @RequestMapping("/admin/employees")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://auth-frontend4.vercel.app")
 public class AdminController {
 
     @Autowired
