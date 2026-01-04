@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/contact")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://auth-frontend4.vercel.app")
 public class ContactController {
 
     private final ContactRepository contactRepository;
