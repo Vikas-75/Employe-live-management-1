@@ -46,4 +46,22 @@ public class AdminController {
     public void deleteEmployee(@PathVariable Long id) {
         service.deleteEmployee(id);
     }
+    // Get pending users
+@GetMapping("/admin/users/pending")
+public List<User> getPendingUsers() {
+    return userService.getPendingUsers();
+}
+
+// Approve user
+@PutMapping("/admin/users/approve/{id}")
+public User approveUser(@PathVariable Long id) {
+    return userService.approveUser(id);
+}
+
+// Reject user
+@PutMapping("/admin/users/reject/{id}")
+public User rejectUser(@PathVariable Long id) {
+    return userService.rejectUser(id);
+}
+
 }
