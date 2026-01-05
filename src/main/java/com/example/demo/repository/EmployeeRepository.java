@@ -11,7 +11,7 @@ import com.example.demo.models.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    List<Employee> findByStatus(String status);
+   List<Employee> findByStatus(EmployeeStatus status);
 
 	Optional<Employee> findByEmail(String email);
 	List<Employee> findByApprovedFalse();
