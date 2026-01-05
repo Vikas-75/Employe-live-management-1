@@ -10,10 +10,10 @@ import com.example.demo.models.Employee;
 
 @RestController
 @RequestMapping("/admin/employees")
-@CrossOrigin(origins = "hhttps://auth-frontend4.vercel.app")
+@CrossOrigin(origins = "https://auth-frontend4.vercel.app")
 public class AdminController {
 
-    @Autowired
+@Autowired
     private EmployeeService service;
 
   
@@ -46,22 +46,21 @@ public class AdminController {
     public void deleteEmployee(@PathVariable Long id) {
         service.deleteEmployee(id);
     }
-    // Get pending users
-@GetMapping("/admin/users/pending")
-public List<User> getPendingUsers() {
-    return userService.getPendingUsers();
-}
+    @GetMapping("/pending")
+    public List<Employee> getPendingUsers() {
+        return service.getPendingUsers();
+    }
 
-// Approve user
-@PutMapping("/admin/users/approve/{id}")
-public User approveUser(@PathVariable Long id) {
-    return userService.approveUser(id);
-}
+    // 2️⃣ Approve user
+    @PutMapping("/approve/{id}")
+    public Employee approveUser(@PathVariable Long id) {
+        return service.approveUser(id);
+    }
 
-// Reject user
-@PutMapping("/admin/users/reject/{id}")
-public User rejectUser(@PathVariable Long id) {
-    return userService.rejectUser(id);
-}
-
+    // 3️⃣ Reject user (optional – delete or mark rejected)
+    @PutMapping("/reject/{id}")
+    public void rejectUser(@PathVariable Long id) {
+        service.rejectUser(id);
+    }
+    
 }
