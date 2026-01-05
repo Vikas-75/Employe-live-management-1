@@ -17,7 +17,7 @@ import com.example.demo.models.LeaveRequest;
 import com.example.demo.repository.EmployeeRepository;
 
 @RestController
-@CrossOrigin(origins = "https://auth-frontend4.vercel.app")
+@CrossOrigin(origins = "https://auth-frontend4.vercel.app/")
 @RequestMapping("/employee/leave")
 public class EmployeeLeaveController {
 
