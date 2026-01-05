@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.yaml.snakeyaml.events.Event.ID;
 
 import com.example.demo.models.Employee;
+import com.example.demo.models.EmployeeStatus;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
