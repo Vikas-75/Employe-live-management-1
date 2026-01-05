@@ -15,7 +15,7 @@ import com.example.demo.service.LeaveService;
 
 @RestController
 @RequestMapping("/admin/leave")
-@CrossOrigin(origins = "hhttps://auth-frontend4.vercel.app/")
+@CrossOrigin(origins = "hhttps://auth-frontend4.vercel.app")
 public class AdminLeaveController {
 
     @Autowired
