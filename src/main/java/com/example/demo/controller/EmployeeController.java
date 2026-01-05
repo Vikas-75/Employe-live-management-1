@@ -9,7 +9,7 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 @RestController
-    @CrossOrigin(origins = "https://auth-frontend4.vercel.app/")
+    @CrossOrigin(origins = "https://auth-frontend4.vercel.app")
 @RequestMapping("/employee")
 
 public class EmployeeController {
