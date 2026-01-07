@@ -3,6 +3,8 @@ package com.example.demo.models;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,7 +28,9 @@ public class Payroll {
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
+    @JsonBackReference // prevents serializing Employee again
     private Employee employee;
+
 
     private double baseSalary;
     private double bonus;
