@@ -35,11 +35,9 @@ public class LeaveRequest {
 	
 	@ManyToOne
 	@JoinColumn(name = "employee_id")
-	@JsonIgnoreProperties({"leaveRequests"})
-	
-
-
+	@JsonIgnoreProperties({"attendances","payrolls","leaveRequests"})
 	private Employee employee;
+
 
 
 	public Long getId() {
