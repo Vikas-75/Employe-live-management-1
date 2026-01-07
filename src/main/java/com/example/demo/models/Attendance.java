@@ -4,15 +4,20 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Attendance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @ManyToOne
+    @JoinColumn(name = "employee_id")
+    @JsonBackReference
     private Employee employee;
+
+
 
     private LocalDate date;
     private boolean present;
@@ -70,4 +75,3 @@ public class Attendance {
     
     
 }
-
