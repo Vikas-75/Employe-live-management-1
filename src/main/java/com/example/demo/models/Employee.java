@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 @Entity
@@ -42,15 +43,15 @@ public class Employee {
 
     // ===== Relationships =====
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference // serialize Payrolls but stop circular ref
+    @JsonIgnoreProperties({"employee"})
     private List<Payroll> payrolls;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @JsonIgnoreProperties({"employee"})
     private List<Attendance> attendances;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @JsonIgnoreProperties({"employee"})
     private List<LeaveRequest> leaveRequests;
 
     // ===== Getters & Setters =====
