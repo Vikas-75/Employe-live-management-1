@@ -99,11 +99,12 @@ public class EmployeeService {
     }
 
     // ================== DELETE EMPLOYEE ==================
-    public void deleteEmployee(Long id) {
-        if (!repository.existsById(id)) {
-            throw new RuntimeException("Employee not found");
+      public void deleteEmployee(Long id) {
+        if(repository.existsById(id)) {
+            repository.deleteById(id); // cascades to Attendance & Payroll
+        } else {
+            throw new RuntimeException("Employee not found with ID: " + id);
         }
-        repository.deleteById(id);
     }
 
     // ================== REQUEST LIVE (OPTIONAL) ==================
