@@ -41,10 +41,15 @@ public class AdminController {
             @RequestBody Employee employee) {
         return service.updateEmployee(id, employee);
     }
-
-    @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable Long id) {
-        service.deleteEmployee(id);
+ @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteEmployee(@PathVariable Long id) {
+        try {
+            service.deleteEmployee(id);
+            return ResponseEntity.ok("Employee deleted successfully along with all related data.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to delete employee: " + e.getMessage());
+        }
     }
     @GetMapping("/pending")
     public List<Employee> getPendingUsers() {
