@@ -4,6 +4,8 @@ import java.lang.annotation.Inherited;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,7 +35,10 @@ public class LeaveRequest {
 	
 	@ManyToOne
 	@JoinColumn(name = "employee_id")
-	@JsonBackReference
+	@JsonIgnoreProperties({"leaveRequests"})
+	
+
+
 	private Employee employee;
 
 
