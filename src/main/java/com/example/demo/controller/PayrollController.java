@@ -18,8 +18,8 @@ import com.example.demo.service.EmployeeService;
 import com.example.demo.service.PayrollService;
 
 @RestController
-@RequestMapping("/api")
-@CrossOrigin
+    @CrossOrigin(origins = "https://auth-frontend4.vercel.app")
+@RequestMapping("/")
 public class PayrollController {
 
     @Autowired
