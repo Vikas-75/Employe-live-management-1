@@ -152,5 +152,13 @@ public class Employee {
         this.payrolls = payrolls;
     }
 
+	public List<LeaveRequest> getLeaveRequests() {
+		return leaveRequests;
+	}
+
+	public void setLeaveRequests(List<LeaveRequest> leaveRequests) {
+		this.leaveRequests = leaveRequests;
+	}
+
     // ... rest of your existing getters and setters
 }
