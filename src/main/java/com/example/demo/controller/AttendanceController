@@ -10,8 +10,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:8080", allowCredentials = "true") // replace with your frontend URL
+    @CrossOrigin(origins = "https://auth-frontend4.vercel.app")
+@RequestMapping("/")
 public class AttendanceController {
 
     @Autowired
