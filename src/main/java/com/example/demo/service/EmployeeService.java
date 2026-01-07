@@ -22,7 +22,7 @@ public class EmployeeService {
             throw new RuntimeException("Email already registered");
         }
 
-        emp.setStatus(EmployeeStatus.PENDING); // waiting for admin approval
+        emp.setStatus(EmployeeStatus.LIVE); // waiting for admin approval
         emp.setApproved(false);
 
         if (emp.getRoleType() == null) {
